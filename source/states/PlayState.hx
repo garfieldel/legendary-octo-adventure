@@ -602,7 +602,7 @@ class PlayState extends MusicBeatState
 
             #if LUA_ALLOWED
             if (OpenFlAssets.exists(dataLua))
-                new FunkinLua(dataLua);
+                new FunkinLua(Asset2File.getPath(dataLua));
             #end
 
             #if HSCRIPT_ALLOWED
