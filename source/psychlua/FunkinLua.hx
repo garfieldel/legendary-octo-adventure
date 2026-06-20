@@ -1574,7 +1574,7 @@ class FunkinLua {
 		}
 
 		try{
-			var isString:Bool = !FileSystem.exists(scriptName);
+			var isString:Bool = !Assets.exists(scriptName);
 			var result:Dynamic = null;
 			if(!isString)
 				result = LuaL.dofile(lua, scriptName);
@@ -1830,21 +1830,21 @@ class FunkinLua {
 
 		for (folder in foldersToCheck)
 		{
-			if(FileSystem.exists(folder))
+			if(Assets.exists(folder))
 			{
 				var frag:String = folder + name + '.frag';
 				var vert:String = folder + name + '.vert';
 				var found:Bool = false;
 				if(FileSystem.exists(frag))
 				{
-					frag = File.getContent(frag);
+					frag = Assets.getText(frag);
 					found = true;
 				}
 				else frag = null;
 
-				if(FileSystem.exists(vert))
+				if(Assets.exists(vert))
 				{
-					vert = File.getContent(vert);
+					vert = Assets.getText(vert);
 					found = true;
 				}
 				else vert = null;
